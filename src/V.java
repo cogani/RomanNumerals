@@ -1,9 +1,18 @@
-
 public class V implements RomanNumber {
+	RomanNumber nextRomanNumber;
+
+	public V() {
+	}
+
+	public V(RomanNumber nextRomanNumber) {
+		this.nextRomanNumber = nextRomanNumber;
+	}
 
 	@Override
 	public int toNumeral() {
-		return 5;
+		if (nextRomanNumber != null)
+			return nextRomanNumber.toNumeral() + value();
+		return value();
 	}
 
 	@Override

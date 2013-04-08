@@ -29,5 +29,10 @@ public class RomanNumeralsTest {
 	public void V_is_5() {
  		assertEquals(5, new  V().toNumeral()); 
 	}
+	
+	@Test
+	public void VI_is_6() {
+ 		assertEquals(6, new  V(new I()).toNumeral()); 
+	}
 
 }
