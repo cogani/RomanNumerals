@@ -12,11 +12,14 @@ public class I implements RomanNumber{
 
 	public int toNumeral() {
 		if (nextNumber != null)
-			return nextNumber.toNumeral() + value();
+			if(nextNumber.value()== 5 )
+			return nextNumber.toNumeral() - value();
+			else return nextNumber.toNumeral() + value();
+		
 		return value();
 	}
 
-	private int value() {
+	public int value() {
 		return 1;
 	}
 

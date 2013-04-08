@@ -20,6 +20,9 @@ public class RomanNumeralsTest {
  		assertEquals(3, new I(new  I(new I())).toNumeral()); 
 	}
 	
-	
+	@Test
+	public void IV_is_4() {
+ 		assertEquals(4, new I(new  V()).toNumeral()); 
+	}	
 
 }
