@@ -35,4 +35,9 @@ public class RomanNumeralsTest {
  		assertEquals(6, new  V(new I()).toNumeral()); 
 	}
 
+	@Test(expected=IllegalArgumentException.class)
+	public void VV_is_invalid() throws Exception{
+ 		new V(new V()).toNumeral(); 
+	}
+	
 }

@@ -2,6 +2,7 @@ public class V implements RomanNumber {
 	RomanNumber nextRomanNumber;
 
 	public V() {
+		this(new NextEmptyNumber());
 	}
 
 	public V(RomanNumber nextRomanNumber) {
@@ -10,9 +11,9 @@ public class V implements RomanNumber {
 
 	@Override
 	public int toNumeral() {
-		if (nextRomanNumber != null)
-			return nextRomanNumber.toNumeral() + value();
-		return value();
+		if (nextRomanNumber.value() == 5)
+			throw new IllegalArgumentException("VV is not valid");
+		return nextRomanNumber.toNumeral() + value();
 	}
 
 	@Override

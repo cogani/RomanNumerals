@@ -1,9 +1,9 @@
-public class I implements RomanNumber{
+public class I implements RomanNumber {
 
 	private RomanNumber nextNumber;
 
 	public I() {
-
+		this(new NextEmptyNumber());
 	}
 
 	public I(RomanNumber nextNumber) {
@@ -11,12 +11,10 @@ public class I implements RomanNumber{
 	}
 
 	public int toNumeral() {
-		if (nextNumber != null)
-			if(nextNumber.value()== 5 )
+		if (nextNumber.value() == 5)
 			return nextNumber.toNumeral() - value();
-			else return nextNumber.toNumeral() + value();
-		
-		return value();
+		else
+			return nextNumber.toNumeral() + value();
 	}
 
 	public int value() {
